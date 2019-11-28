@@ -22,14 +22,15 @@
   color: #09d3ac;
 }
 
+
 /* PPGApp styles start here */
 
 /* colour variables */
 
 :root {
   /* main background and text colours */
-  --background-main: rgb(22, 22, 29);
-  --text-main: rgb(230, 230, 230);
+  --dark-main: rgb(22, 22, 29);
+  --light-main: rgb(230, 230, 230);
   --button-background: rgb(255, 97, 254);
 }
 
@@ -44,25 +45,53 @@ body,
 button {
   font-family: 'Overpass Mono', monospace;
 }
+
 body {
-  font-weight: 400;
-  background: var(--background-main);
-  color: var(--text-main);
+  background: var(--dark-main);
 }
 
 .wrapper {
   max-width: 740px;
-  width: 100%;
+  width: 94%;
   margin: 0 auto;
 }
 
 h1,
 h2,
-button,
-p {
+h3,
+h4,
+p,
+button {
   margin: 0;
   padding: 0;
   border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+.make-pixel-art {
+  color: var(--dark-main);
+}
+
+h1,
+h2,
+h4,
+.make-pixel-art {
+  font-weight: 700;
+}
+
+h1,
+h3,
+p {
+  text-align: left;
+}
+
+h1,
+article,
+h4 {
+   background: var(--light-main);
 }
 
 
@@ -71,12 +100,8 @@ p {
 header {
   display: flex;
   justify-content: space-between;
-}
 
-h1,
-.makePixelArt {
-  color: var(--background-main);
-  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -87,9 +112,7 @@ h1 {
   padding: 6px 0 3px 2px;
   border-bottom-right-radius: 6px;
 
-  background: var(--text-main);
   font-size: 3.2rem;
-  text-align: left;
   line-height: 0.95;
 }
 
@@ -103,7 +126,6 @@ h1 {
   width: 32%;
   height: 75px;
   padding: 6px 8px 2px;
-  border-radius: 12px;
 
   background: var(--button-background);
   font-size: 2.2rem;
@@ -129,10 +151,47 @@ h1 {
   height: 75px;
 }
 
+.make-pixel-art,
+article {
+  border-radius: 12px;
+}
+
 /* main and pixel art card styles */
 
-.art-card {
-  
+article {
+  height: 400px;
+  margin: 20px 0;
+}
+
+h2 {
+  padding: 12px 0;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.art-container {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  border: 1px solid var(--dark-main);
+}
+
+h3,
+p {
+  font-weight: 400;
+}
+
+h3 {
+  margin-left: 25px;
+  margin-bottom: 5px;
+
+  font-size: 2.2rem;
+}
+
+p {
+  margin-left: 30px;
+  font-size: 1.6rem;
 }
 
 
@@ -140,6 +199,16 @@ h1 {
 
 
 /* footer styles */
+
+h4 {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 8px;
+  
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
 
 
 /* media queries */
