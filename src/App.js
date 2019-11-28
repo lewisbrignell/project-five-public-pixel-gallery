@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import firebase from './firebase.js';
 import './App.css';
 
 // the main class of the Public Pixel Gallery App
 class PPGApp extends Component {
+
+  componentDidMount() {
+    // firebase connected successfully!
+    const dbRef = firebase.database().ref();
+    
+  }
 
   render() {
     return (
