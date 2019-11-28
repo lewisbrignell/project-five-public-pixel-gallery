@@ -24,12 +24,13 @@
 
 /* PPGApp styles start here */
 
-/* colour variables #16161d*/
+/* colour variables */
 
 :root {
   /* main background and text colours */
   --background-main: rgb(22, 22, 29);
   --text-main: rgb(230, 230, 230);
+  --button-background: rgb(255, 97, 254);
 }
 
 /* general styles and stripping styles */
@@ -39,11 +40,20 @@ html {
   font-size: 62.5%;
 }
 
-body {
+body,
+button {
   font-family: 'Overpass Mono', monospace;
+}
+body {
   font-weight: 400;
   background: var(--background-main);
   color: var(--text-main);
+}
+
+.wrapper {
+  max-width: 740px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1,
@@ -65,7 +75,6 @@ header {
 
 h1,
 .makePixelArt {
-  background: var(--text-main);
   color: var(--background-main);
   font-weight: 700;
 }
@@ -73,28 +82,58 @@ h1,
 h1 {
   display: inline-block;
 
+  max-width: 220px;
   width: 45%;
   padding: 6px 0 3px 2px;
+  border-bottom-right-radius: 6px;
 
+  background: var(--text-main);
   font-size: 3.2rem;
   text-align: left;
   line-height: 0.95;
 }
 
-.makePixelArt {
+.make-pixel-art {
+  position: fixed;
+  top: 15px;
+  right: 10px;
+
   min-width: 100px;
+  max-width: 150px;
   width: 32%;
   height: 75px;
-  margin: 15px 10px 0 0;
-  padding: 5px 8px;
+  padding: 6px 8px 2px;
   border-radius: 12px;
 
+  background: var(--button-background);
   font-size: 2.2rem;
-  line-height: 1.1;
+  line-height: 1;
+
+  transition: all 0.25s ease;
 }
 
+.make-pixel-art:hover,
+.make-pixel-art:focus {
+  top: 10px;
+  right: 5px;
+
+  width: 34%;
+  height: 85px;
+}
+
+.make-pixel-art:active {
+  top: 18px;
+  right: 10px;
+
+  width: 32%;
+  height: 75px;
+}
 
 /* main and pixel art card styles */
+
+.art-card {
+  
+}
 
 
 /* pixel art maker styles  */
