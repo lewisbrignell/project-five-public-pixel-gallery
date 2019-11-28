@@ -1,3 +1,4 @@
+/* default React App styles */
 .App {
   text-align: center;
 }
@@ -20,3 +21,86 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* PPGApp styles start here */
+
+/* colour variables #16161d*/
+
+:root {
+  /* main background and text colours */
+  --background-main: rgb(22, 22, 29);
+  --text-main: rgb(230, 230, 230);
+}
+
+/* general styles and stripping styles */
+
+html {
+  /* 1rem set to measure 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Overpass Mono', monospace;
+  font-weight: 400;
+  background: var(--background-main);
+  color: var(--text-main);
+}
+
+h1,
+h2,
+button,
+p {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
+/* header styles */
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1,
+.makePixelArt {
+  background: var(--text-main);
+  color: var(--background-main);
+  font-weight: 700;
+}
+
+h1 {
+  display: inline-block;
+
+  width: 45%;
+  padding: 6px 0 3px 2px;
+
+  font-size: 3.2rem;
+  text-align: left;
+  line-height: 0.95;
+}
+
+.makePixelArt {
+  min-width: 100px;
+  width: 32%;
+  height: 75px;
+  margin: 15px 10px 0 0;
+  padding: 5px 8px;
+  border-radius: 12px;
+
+  font-size: 2.2rem;
+  line-height: 1.1;
+}
+
+
+/* main and pixel art card styles */
+
+
+/* pixel art maker styles  */
+
+
+/* footer styles */
+
+
+/* media queries */
