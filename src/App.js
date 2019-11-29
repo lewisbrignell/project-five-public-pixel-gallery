@@ -19,38 +19,31 @@ class PPGApp extends Component {
             <button className="make-pixel-art">make pixel art</button>
         </header>
         <main>
-          <div className="wrapper">
-            <article>
+          <ul className="wrapper">
+            <li>
               <h2>title of piece</h2>
-              <div className="art-container"></div>
+              <div className="art-container">
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+              </div>
               <h3>pen name of creator</h3>
-              <p>date and time</p>
-            </article>
-            <article>
-              <h2>title of piece</h2>
-              <div className="art-container"></div>
-              <h3>pen name of creator</h3>
-              <p>date and time</p>
-            </article>
-            <article>
-              <h2>title of piece</h2>
-              <div className="art-container"></div>
-              <h3>pen name of creator</h3>
-              <p>date and time</p>
-            </article>
-            <article>
-              <h2>title of piece</h2>
-              <div className="art-container"></div>
-              <h3>pen name of creator</h3>
-              <p>date and time</p>
-            </article>
-            <article>
-              <h2>title of piece</h2>
-              <div className="art-container"></div>
-              <h3>pen name of creator</h3>
-              <p>date and time</p>
-            </article>
-          </div> {/* /.wrapper */}
+            </li>
+
+  
+          </ul> {/* /.wrapper */}
         </main>
         <footer>
           <h4>copyright lewis brignell 2019</h4>
