@@ -123,6 +123,7 @@ h1 {
   position: fixed;
   top: 15px;
   right: 10px;
+  z-index: 2;
 
   min-width: 100px;
   max-width: 150px;
@@ -161,9 +162,33 @@ li {
 
 /* main and pixel art card styles */
 
+main {
+  position: relative;
+}
+
+/* pixel art maker styles  */
+.section1 {
+  height: 568px;
+  width: 100%;
+  max-width: 320px;
+
+  position: absolute;
+  top: -700px;
+  z-index: 3;
+
+  background: var(--light-main);
+
+  transition: all 0.25s ease;
+}
+
 /* container in which all generated database info / art is displayed */
+
+.section-2 {
+  margin-bottom: 30px;
+}
+
 li {
-  height: 400px;
+  height: 390px;
   max-width: 302px;
   margin: 20px auto;
 }
@@ -198,9 +223,6 @@ h3 {
   font-size: 2.2rem;
   font-weight: 400;
 }
-
-
-/* pixel art maker styles  */
 
 
 /* footer styles */
