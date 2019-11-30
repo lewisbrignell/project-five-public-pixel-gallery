@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import firebase from './firebase.js';
+import Section1 from './Section1.js'
 import './App.css';
+
 
 // the main class of the Public Pixel Gallery App
 class PPGApp extends Component {
 
-  componentDidMount() {
-    // firebase connected successfully!
-    const dbRef = firebase.database().ref();
-    
+  displaySection1 = (event) => {
+    const element = document.getElementById("section1");
+    element.style.top = "-130px";
+    document.getElementsByTagName('html')[0].style.overflow = "hidden";
   }
 
-  // displaySection1 = (event) => {
-  //   const element = document.getElementById("section1");
-  //   element.style.top = "-130px";
-  //   document.getElementsByTagName('html')[0].style.overflow = "hidden";
-  // }
+  componentDidMount() {
+    // firebase connected successfully!
+    // const dbRef = firebase.database().ref();
+    
+  }
 
   render() {
     return (
@@ -25,35 +27,19 @@ class PPGApp extends Component {
             <button className="make-pixel-art" onClick={this.displaySection1}>make pixel art</button>
         </header>
         <main>
-          <section id="section1" className="section1">
-            <h2>make art!</h2>
-          </section>
+          <Section1 />
 
           <section className="section-2">
             <ul className="wrapper">
               <li>
                 <h2>title of piece</h2>
+
                 <div className="art-container">
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
-                  <div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div><div className="pixel"></div>
+                  
                 </div>
+
                 <h3>pen name of creator</h3>
               </li>
-  
-    
             </ul> {/* /.wrapper */}
           </section>
         </main>
