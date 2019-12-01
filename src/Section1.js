@@ -6,11 +6,13 @@ class Section1 extends Component {
         super();
 
         let buttonArray = this.generateButtons();
+        let colourArray = this.generateDefaultColours();
         
         this.state = {
             buttonPixels: buttonArray,
+            buttonPixelColours: colourArray,
+            selectedColour: `#fff`, 
         }
-        console.log('state', this.state)
     }
 
     hideSection1 = (event) => {
@@ -25,36 +27,94 @@ class Section1 extends Component {
         for (let x = 0; x < max; x++) {
             tempArray.push(x);
         }
-        console.log(tempArray)
         return(tempArray);
     }
 
-    returnButtonVal = (event) => {
+    generateDefaultColours = () => {
+        const max = 144;
+        const tempArray = [];
+        const defaultColour = `#fff`
+        for (let x = 0; x < max; x++) {
+            tempArray.push(defaultColour);
+        }
+        return (tempArray);
+    }
+
+    changeButtonValue = (event) => {
         event.preventDefault();
-        console.log(event.target);
+        let position = event.target.id;
+        let colourArray = this.state.buttonPixelColours;
+        colourArray[position] = this.state.selectedColour;
+        this.setState({
+            buttonPixelColours: colourArray,
+        });
+        
+    }
+
+    changeSelectedColour = (event) => {
+        this.setState({
+            selectedColour: event.target.value,
+        });
     }
 
     componentDidMount() {
         
     }
 
-
-    /* <button className="buttonPixel" id="0" onClick={this.returnButtonVal}></button> */ 
-
     render() {
+        console.log('current state', this.state);
+
         return(
             <section id="section1" className="section1">
                 <h2>make art!</h2>
-                <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
-                <div id="artMaker" className="artMaker art-container">
-                    {
-                        this.state.buttonPixels.map( (thing) => {
-                            return (
-                                <button key={thing} className="buttonPixel" id={thing} onClick={this.returnButtonVal}></button>
-                            );
-                        })
-                    }
-                </div>
+                <form action="">
+                    <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
+                    <div id="artMaker" className="artMaker art-container">
+                        {
+                            this.state.buttonPixels.map( (thing) => {
+                                return (
+                                    <button key={thing} className="buttonPixel" value={this.state.buttonPixelColours[thing]} style={{background: this.state.buttonPixelColours[thing]}} id={thing} onClick={this.changeButtonValue}></button>
+                                );
+                            })
+                        }
+                    </div>
+                    {/* add a colour palette radio selection */}
+                    <fieldset>
+                        <legend className="sr-only">select a colour</legend>
+                        
+                        <label htmlFor="white" className="sr-only">white</label>
+                        <input type="radio" id="white" name="palette" value="#fff" onClick={this.changeSelectedColour} defaultChecked />
+
+                        <label htmlFor="silver" className="sr-only">silver</label>
+                        <input type="radio" id="silver" name="palette" value="#c0c0c0" onClick={this.changeSelectedColour} />
+                        
+                        <label htmlFor="black" className="sr-only">black</label>
+                        <input type="radio" id="black" name="palette" value="#000" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="blue" className="sr-only">blue</label>
+                        <input type="radio" id="blue" name="palette" value="#0000ff" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="aqua" className="sr-only">aqua</label>
+                        <input type="radio" id="aqua" name="palette" value="#00ffff" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="lime" className="sr-only">lime</label>
+                        <input type="radio" id="lime" name="palette" value="#00ff00" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="yellow" className="sr-only">yellow</label>
+                        <input type="radio" id="yellow" name="palette" value="#ffff00" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="red" className="sr-only">red</label>
+                        <input type="radio" id="red" name="palette" value="#ff0000" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="fuchsia" className="sr-only">fuchsia</label>
+                        <input type="radio" id="fuchsia" name="palette" value="#ff00ff" onClick={this.changeSelectedColour} />
+
+                        <label htmlFor="purple" className="sr-only">purple</label>
+                        <input type="radio" id="purple" name="palette" value="#800080" onClick={this.changeSelectedColour} />
+                    </fieldset>
+                </form>
+                  {/* make sure they assign colour hex codes to buttons */}
+                {/* add title and name inputs */}
             </section> // /* section1 */ 
         );
     }

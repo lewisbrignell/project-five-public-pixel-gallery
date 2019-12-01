@@ -72,6 +72,7 @@ h2,
 h3,
 h4,
 p,
+fieldset,
 button,
 ul,
 li {
@@ -266,7 +267,17 @@ main {
 }
 
 .buttonPixel {
-  background: red;
+  background: #fff;
+  border: 0.3px dotted var(--dark-main);
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type=radio] {
+  border: 2px solid red;
 }
 
 
