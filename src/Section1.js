@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import firebase from './firebase.js';
 
 class Section1 extends Component {
     constructor() {
@@ -11,11 +11,14 @@ class Section1 extends Component {
         this.state = {
             buttonPixels: buttonArray,
             buttonPixelColours: colourArray,
-            selectedColour: `#fff`, 
+            selectedColour: `#fff`,
+            title: "",
+            authour: "", 
         }
     }
 
     hideSection1 = (event) => {
+        event.preventDefault();
         const element = document.getElementById("section1");
         element.style.top = "-700px";
         document.getElementsByTagName('html')[0].style.overflow = "scroll";
@@ -58,7 +61,17 @@ class Section1 extends Component {
     }
 
     componentDidMount() {
-        
+        // firebase connected successfully!
+        const dbRef = firebase.database().ref();
+        dbRef.on('value', (data) => {
+            console.log(data.val());
+            
+        });
+    }
+
+    publishArt = (event) => {
+        event.preventDefault();
+        console.log('you hit publish');
     }
 
     render() {
@@ -67,7 +80,7 @@ class Section1 extends Component {
         return(
             <section id="section1" className="section1">
                 <h2>make art!</h2>
-                <form action="">
+                <form action="submit">
                     <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
                     <div id="artMaker" className="artMaker art-container">
                         {
@@ -78,7 +91,6 @@ class Section1 extends Component {
                             })
                         }
                     </div>
-                    {/* add a colour palette radio selection */}
                     <fieldset>
                         <legend className="sr-only">select a colour</legend>
                         
@@ -113,8 +125,8 @@ class Section1 extends Component {
                         <input type="radio" id="purple" name="palette" value="#800080" onClick={this.changeSelectedColour} />
                     </fieldset>
                 </form>
-                  {/* make sure they assign colour hex codes to buttons */}
                 {/* add title and name inputs */}
+                <button className="publish" onClick={this.publishArt} >publish</button>
             </section> // /* section1 */ 
         );
     }
