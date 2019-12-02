@@ -55,6 +55,8 @@ class Section1 extends Component {
     }
 
     changeSelectedColour = (event) => {
+        
+        event.target.previousSibling.style.border = "3px solid red";
         this.setState({
             selectedColour: event.target.value,
         });
@@ -117,35 +119,35 @@ class Section1 extends Component {
                     <fieldset>
                         <legend className="sr-only">select a colour</legend>
                         
-                        <label htmlFor="white" className="sr-only">white</label>
-                        <input type="radio" id="white" name="palette" value="#fff" onClick={this.changeSelectedColour} defaultChecked />
+                        <label style={{background: '#fff'}} className="radioLabel" htmlFor="white">white</label>
+                        <input type="radio" id="white" name="palette" value="#fff" className="sr-only" onClick={this.changeSelectedColour} defaultChecked />
 
-                        <label htmlFor="silver" className="sr-only">silver</label>
-                        <input type="radio" id="silver" name="palette" value="#c0c0c0" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#c0c0c0' }} className="radioLabel" htmlFor="silver">silver</label>
+                        <input type="radio" id="silver" name="palette" value="#c0c0c0" className="sr-only" onClick={this.changeSelectedColour} />
                         
-                        <label htmlFor="black" className="sr-only">black</label>
-                        <input type="radio" id="black" name="palette" value="#000" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#000' }}  className="radioLabel" htmlFor="black">black</label>
+                        <input type="radio" id="black" name="palette" value="#000" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="blue" className="sr-only">blue</label>
-                        <input type="radio" id="blue" name="palette" value="#0000ff" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#0000ff' }}  className="radioLabel" htmlFor="blue">blue</label>
+                        <input type="radio" id="blue" name="palette" value="#0000ff" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="aqua" className="sr-only">aqua</label>
-                        <input type="radio" id="aqua" name="palette" value="#00ffff" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#00ffff' }}  className="radioLabel" htmlFor="aqua">aqua</label>
+                        <input type="radio" id="aqua" name="palette" value="#00ffff" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="lime" className="sr-only">lime</label>
-                        <input type="radio" id="lime" name="palette" value="#00ff00" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#00ff00' }}  className="radioLabel" htmlFor="lime">lime</label>
+                        <input type="radio" id="lime" name="palette" value="#00ff00" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="yellow" className="sr-only">yellow</label>
-                        <input type="radio" id="yellow" name="palette" value="#ffff00" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#ffff00' }}  className="radioLabel" htmlFor="yellow">yellow</label>
+                        <input type="radio" id="yellow" name="palette" value="#ffff00" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="red" className="sr-only">red</label>
-                        <input type="radio" id="red" name="palette" value="#ff0000" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#ff0000' }}  className="radioLabel" htmlFor="red">red</label>
+                        <input type="radio" id="red" name="palette" value="#ff0000" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="fuchsia" className="sr-only">fuchsia</label>
-                        <input type="radio" id="fuchsia" name="palette" value="#ff00ff" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#ff00ff' }}  className="radioLabel" htmlFor="fuchsia">fuchsia</label>
+                        <input type="radio" id="fuchsia" name="palette" value="#ff00ff" className="sr-only" onClick={this.changeSelectedColour} />
 
-                        <label htmlFor="purple" className="sr-only">purple</label>
-                        <input type="radio" id="purple" name="palette" value="#800080" onClick={this.changeSelectedColour} />
+                        <label style={{ background: '#800080' }}  className="radioLabel" htmlFor="purple">purple</label>
+                        <input type="radio" id="purple" name="palette" value="#800080" className="sr-only" onClick={this.changeSelectedColour} />
                     </fieldset>
                     <div className="inputContainer">
                         <label htmlFor="titleInput" className="sr-only">art title here</label>
