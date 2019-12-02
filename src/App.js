@@ -51,7 +51,7 @@ class PPGApp extends Component {
                 this.state.pixelArtArray.map( (artItem) => {
                   return(
                     <li>
-                      <h2>{artItem.maker}</h2>
+                      <h2>{artItem.name}</h2>
                       <div className="art-container">
                         {
                           artItem.colourArray.map((colour) => {
@@ -61,7 +61,7 @@ class PPGApp extends Component {
                           })
                         }
                       </div>   
-                      <h3>{artItem.name}</h3>
+                      <h3>{artItem.maker}</h3>
                     </li>
                   )
                 })

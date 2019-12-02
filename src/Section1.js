@@ -149,10 +149,10 @@ class Section1 extends Component {
                     </fieldset>
                     <div className="inputContainer">
                         <label htmlFor="titleInput" className="sr-only">art title here</label>
-                        <input id="titleInput" type="text" placeholder="art title here" required onChange={this.changeTitle}/>
+                        <input id="titleInput" type="text" placeholder="art title here" maxLength="15" required onChange={this.changeTitle}/>
 
                         <label htmlFor="nameInput" className="sr-only">your name here</label>
-                        <input id="nameInput" type="text" placeholder="your name here" required onChange={this.changeName}/>
+                        <input id="nameInput" type="text" placeholder="your name here" maxLength="18" required onChange={this.changeName}/>
                     </div>
 
                 </form>
