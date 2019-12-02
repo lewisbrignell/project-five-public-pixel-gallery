@@ -46,7 +46,7 @@ class PPGApp extends Component {
           <Section1 />
 
           <section className="section-2">
-            <ul className="wrapper">
+            <ul className="wrapper gallery">
               {
                 this.state.pixelArtArray.map( (artItem) => {
                   return(
