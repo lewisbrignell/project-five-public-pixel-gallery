@@ -247,8 +247,9 @@ main {
   width: 100%;
   max-width: 320px;
 
-  position: absolute;
-  top: -700px;
+  position: fixed;
+  top: 0;
+  left: -100vw;
   z-index: 3;
 
   background: var(--light-main);

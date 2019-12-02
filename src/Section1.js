@@ -20,7 +20,7 @@ class Section1 extends Component {
     hideSection1 = (event) => {
         event.preventDefault();
         const element = document.getElementById("section1");
-        element.style.top = "-700px";
+        element.style.left = "-100vw";
         document.getElementsByTagName('html')[0].style.overflow = "scroll";
     }
 
@@ -62,16 +62,27 @@ class Section1 extends Component {
 
     componentDidMount() {
         // firebase connected successfully!
-        const dbRef = firebase.database().ref();
-        dbRef.on('value', (data) => {
-            console.log(data.val());
-            
-        });
     }
 
     publishArt = (event) => {
         event.preventDefault();
         console.log('you hit publish');
+
+        let newArtObject = {
+            colourArray: this.state.buttonPixelColours,
+            name: this.state.title,
+            maker: this.state.authour,
+        }
+        console.log(newArtObject);
+        const dbRef = firebase.database().ref();
+        dbRef.push(newArtObject);
+
+        this.setState({
+            buttonPixelColours: this.generateDefaultColours(),
+            selectedColour: `#fff`,
+            title: "",
+            authour: "", 
+        });
     }
 
     render() {

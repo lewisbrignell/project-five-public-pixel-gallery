@@ -9,7 +9,7 @@ class PPGApp extends Component {
 
   displaySection1 = (event) => {
     const element = document.getElementById("section1");
-    element.style.top = "-130px";
+    element.style.left = "0";
     document.getElementsByTagName('html')[0].style.overflow = "hidden";
   }
 
