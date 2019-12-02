@@ -188,6 +188,7 @@ h1 {
 
 .make-pixel-art,
 .publish,
+input[type=text],
 li {
   border-radius: 12px;
 }
@@ -297,6 +298,26 @@ fieldset {
 
 input[type=radio] {
   border: 2px solid red;
+}
+
+.inputContainer {
+  width: 55%;
+
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+input[type=text] {
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid var(--dark-main);
+
+  font-size: 2.2rem;
 }
 
 

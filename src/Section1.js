@@ -60,37 +60,52 @@ class Section1 extends Component {
         });
     }
 
-    componentDidMount() {
-        // firebase connected successfully!
+    changeTitle = (event) => {
+        this.setState({
+            title: event.target.value,
+        });
+    }
+
+    changeName = (event) => {
+        this.setState({
+            authour: event.target.value,
+        });
     }
 
     publishArt = (event) => {
         event.preventDefault();
-        console.log('you hit publish');
 
-        let newArtObject = {
-            colourArray: this.state.buttonPixelColours,
-            name: this.state.title,
-            maker: this.state.authour,
+        if (this.state.title !== "" && this.state.authour !== "") {
+            let newArtObject = {
+                colourArray: this.state.buttonPixelColours,
+                name: this.state.title,
+                maker: this.state.authour,
+            }
+            const dbRef = firebase.database().ref();
+            dbRef.push(newArtObject);
+
+            this.setState({
+                buttonPixelColours: this.generateDefaultColours(),
+                selectedColour: `#fff`,
+                title: "",
+                authour: "",
+            });
+        } else {
+            alert('Please input a title and name.')
         }
-        const dbRef = firebase.database().ref();
-        dbRef.push(newArtObject);
 
-        this.setState({
-            buttonPixelColours: this.generateDefaultColours(),
-            selectedColour: `#fff`,
-            title: "",
-            authour: "", 
-        });
+        
     }
 
     render() {
+        console.log('state: ', this.state);
         return(
             <section id="section1" className="section1">
                 <h2>make art!</h2>
                 <form action="submit">
                     <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
-                    <div id="artMaker" className="artMaker art-container">
+                    <fieldset id="artMaker" className="artMaker art-container">
+                        <legend className="sr-only">here you can colour the pixels</legend>
                         {
                             this.state.buttonPixels.map( (thing) => {
                                 return (
@@ -98,7 +113,7 @@ class Section1 extends Component {
                                 );
                             })
                         }
-                    </div>
+                    </fieldset>
                     <fieldset>
                         <legend className="sr-only">select a colour</legend>
                         
@@ -132,6 +147,14 @@ class Section1 extends Component {
                         <label htmlFor="purple" className="sr-only">purple</label>
                         <input type="radio" id="purple" name="palette" value="#800080" onClick={this.changeSelectedColour} />
                     </fieldset>
+                    <div className="inputContainer">
+                        <label htmlFor="titleInput" className="sr-only">art title here</label>
+                        <input id="titleInput" type="text" placeholder="art title here" required onChange={this.changeTitle}/>
+
+                        <label htmlFor="nameInput" className="sr-only">your name here</label>
+                        <input id="nameInput" type="text" placeholder="your name here" required onChange={this.changeName}/>
+                    </div>
+
                 </form>
                 {/* add title and name inputs */}
                 <button className="publish" onClick={this.publishArt} >publish</button>
