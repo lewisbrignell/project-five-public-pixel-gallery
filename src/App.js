@@ -6,6 +6,12 @@ import './App.css';
 
 // the main class of the Public Pixel Gallery App
 class PPGApp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pixelArtArray: [],
+    }
+  }
 
   displaySection1 = (event) => {
     const element = document.getElementById("section1");
@@ -14,9 +20,19 @@ class PPGApp extends Component {
   }
 
   componentDidMount() {
-    // firebase connected successfully!
-    // const dbRef = firebase.database().ref();
-    
+    const dbRef = firebase.database().ref();
+    dbRef.on('value', (data) => {
+      let artArray = [];
+      
+      for (let artPiece in data.val()) {
+        artArray.push(data.val()[artPiece]);
+      }
+      
+      this.setState({
+        pixelArtArray: artArray,
+      });
+      console.log("state: ", this.state);
+    });
   }
 
   render() {
@@ -31,15 +47,25 @@ class PPGApp extends Component {
 
           <section className="section-2">
             <ul className="wrapper">
-              <li>
-                <h2>title of piece</h2>
-
-                <div className="art-container">
-                  
-                </div>
-
-                <h3>pen name of creator</h3>
-              </li>
+              {
+                this.state.pixelArtArray.map( (artItem) => {
+                  return(
+                    <li>
+                      <h2>{artItem.maker}</h2>
+                      <div className="art-container">
+                        {
+                          artItem.colourArray.map((colour) => {
+                            return (
+                              <div style={{background: colour}}></div>
+                            )
+                          })
+                        }
+                      </div>   
+                      <h3>{artItem.name}</h3>
+                    </li>
+                  )
+                })
+              }   
             </ul> {/* /.wrapper */}
           </section>
         </main>

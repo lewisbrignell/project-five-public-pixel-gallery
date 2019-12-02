@@ -73,7 +73,6 @@ class Section1 extends Component {
             name: this.state.title,
             maker: this.state.authour,
         }
-        console.log(newArtObject);
         const dbRef = firebase.database().ref();
         dbRef.push(newArtObject);
 
@@ -86,8 +85,6 @@ class Section1 extends Component {
     }
 
     render() {
-        console.log('current state', this.state);
-
         return(
             <section id="section1" className="section1">
                 <h2>make art!</h2>
