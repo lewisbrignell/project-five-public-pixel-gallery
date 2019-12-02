@@ -39,8 +39,8 @@ class PPGApp extends Component {
     return (
       <div className="App">
         <header>
-            <h1>public pixel gallery</h1>
-            <button className="make-pixel-art" onClick={this.displaySection1}>make pixel art</button>
+          <h1>public pixel gallery</h1>
+          <button className="make-pixel-art" onClick={this.displaySection1}>make pixel art</button>
         </header>
         <main>
           <Section1 />

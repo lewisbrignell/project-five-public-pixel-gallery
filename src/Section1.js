@@ -105,83 +105,86 @@ class Section1 extends Component {
         console.log('state: ', this.state);
         return(
             <section id="section1" className="section1">
-                <h2>make art!</h2>
-                <form action="submit">
-                    <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
-                    <fieldset id="artMaker" className="artMaker art-container">
-                        <legend className="sr-only">here you can colour the pixels</legend>
-                        {
-                            this.state.buttonPixels.map( (thing) => {
-                                return (
-                                    <button key={thing} className="buttonPixel" value={this.state.buttonPixelColours[thing]} style={{background: this.state.buttonPixelColours[thing]}} id={thing} onClick={this.changeButtonValue}></button>
-                                );
-                            })
-                        }
-                    </fieldset>
-                    <fieldset className="radioContainer">
-                        <legend className="sr-only">select a colour</legend>
-                        
-                        <label style={{background: '#fff'}} className="radioLabel" htmlFor="white"><p className="sr-only">
-                            white
-                        </p></label>
-                        <input type="radio" id="white" name="palette" value="#fff" className="sr-only" onClick={this.changeSelectedColour} defaultChecked />
-
-                        <label style={{ background: '#c0c0c0' }} className="radioLabel" htmlFor="silver"><p className="sr-only">
-                            silver
-                        </p></label>
-                        <input type="radio" id="silver" name="palette" value="#c0c0c0" className="sr-only" onClick={this.changeSelectedColour} />
-                        
-                        <label style={{ background: '#000' }}  className="radioLabel" htmlFor="black"><p className="sr-only">
-                            black
-                        </p></label>
-                        <input type="radio" id="black" name="palette" value="#000" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#0000ff' }}  className="radioLabel" htmlFor="blue"><p className="sr-only">
-                            blue
-                        </p></label>
-                        <input type="radio" id="blue" name="palette" value="#0000ff" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#00ffff' }}  className="radioLabel" htmlFor="aqua"><p className="sr-only">
-                            aqua
-                        </p></label>
-                        <input type="radio" id="aqua" name="palette" value="#00ffff" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#00ff00' }}  className="radioLabel" htmlFor="lime"><p className="sr-only">
-                            lime
-                        </p></label>
-                        <input type="radio" id="lime" name="palette" value="#00ff00" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#ffff00' }}  className="radioLabel" htmlFor="yellow"><p className="sr-only">
-                            yellow
-                        </p></label>
-                        <input type="radio" id="yellow" name="palette" value="#ffff00" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#ff0000' }}  className="radioLabel" htmlFor="red"><p className="sr-only">
-                            red
-                        </p></label>
-                        <input type="radio" id="red" name="palette" value="#ff0000" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#ff00ff' }}  className="radioLabel" htmlFor="fuchsia"><p className="sr-only">
-                            fuchsia
-                        </p></label>
-                        <input type="radio" id="fuchsia" name="palette" value="#ff00ff" className="sr-only" onClick={this.changeSelectedColour} />
-
-                        <label style={{ background: '#800080' }}  className="radioLabel" htmlFor="purple"><p className="sr-only">
-                            purple
-                        </p></label>
-                        <input type="radio" id="purple" name="palette" value="#800080" className="sr-only" onClick={this.changeSelectedColour} />
-                    </fieldset>
-                    <div className="inputContainer">
-                        <label htmlFor="titleInput" className="sr-only">art title here</label>
-                        <input id="titleInput" type="text" placeholder="art title here" maxLength="15" required onChange={this.changeTitle}/>
-
-                        <label htmlFor="nameInput" className="sr-only">your name here</label>
-                        <input id="nameInput" type="text" placeholder="your name here" maxLength="18" required onChange={this.changeName}/>
+                <div className="wrapper">
+                    <div className="flexparent">
+                        <h2>make art!</h2>
+                        <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
                     </div>
+                    <form action="submit">
+                        <fieldset id="artMaker" className="artMaker art-container">
+                            <legend className="sr-only">here you can colour the pixels</legend>
+                            {
+                                this.state.buttonPixels.map( (thing) => {
+                                    return (
+                                        <button key={thing} className="buttonPixel" value={this.state.buttonPixelColours[thing]} style={{background: this.state.buttonPixelColours[thing]}} id={thing} onClick={this.changeButtonValue}></button>
+                                    );
+                                })
+                            }
+                        </fieldset>
+                        <fieldset className="radioContainer">
+                            <legend className="sr-only">select a colour</legend>
+                            
+                            <label style={{background: '#fff'}} className="radioLabel" htmlFor="white"><p className="sr-only">
+                                white
+                            </p></label>
+                            <input type="radio" id="white" name="palette" value="#fff" className="sr-only" onClick={this.changeSelectedColour} defaultChecked />
+    
+                            <label style={{ background: '#c0c0c0' }} className="radioLabel" htmlFor="silver"><p className="sr-only">
+                                silver
+                            </p></label>
+                            <input type="radio" id="silver" name="palette" value="#c0c0c0" className="sr-only" onClick={this.changeSelectedColour} />
+                            
+                            <label style={{ background: '#000' }}  className="radioLabel" htmlFor="black"><p className="sr-only">
+                                black
+                            </p></label>
+                            <input type="radio" id="black" name="palette" value="#000" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#0000ff' }}  className="radioLabel" htmlFor="blue"><p className="sr-only">
+                                blue
+                            </p></label>
+                            <input type="radio" id="blue" name="palette" value="#0000ff" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#00ffff' }}  className="radioLabel" htmlFor="aqua"><p className="sr-only">
+                                aqua
+                            </p></label>
+                            <input type="radio" id="aqua" name="palette" value="#00ffff" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#00ff00' }}  className="radioLabel" htmlFor="lime"><p className="sr-only">
+                                lime
+                            </p></label>
+                            <input type="radio" id="lime" name="palette" value="#00ff00" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#ffff00' }}  className="radioLabel" htmlFor="yellow"><p className="sr-only">
+                                yellow
+                            </p></label>
+                            <input type="radio" id="yellow" name="palette" value="#ffff00" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#ff0000' }}  className="radioLabel" htmlFor="red"><p className="sr-only">
+                                red
+                            </p></label>
+                            <input type="radio" id="red" name="palette" value="#ff0000" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#ff00ff' }}  className="radioLabel" htmlFor="fuchsia"><p className="sr-only">
+                                fuchsia
+                            </p></label>
+                            <input type="radio" id="fuchsia" name="palette" value="#ff00ff" className="sr-only" onClick={this.changeSelectedColour} />
+    
+                            <label style={{ background: '#800080' }}  className="radioLabel" htmlFor="purple"><p className="sr-only">
+                                purple
+                            </p></label>
+                            <input type="radio" id="purple" name="palette" value="#800080" className="sr-only" onClick={this.changeSelectedColour} />
+                        </fieldset>
+                        <div className="inputContainer">
+                            <label htmlFor="titleInput" className="sr-only">art title here</label>
+                            <input id="titleInput" type="text" placeholder="art title here" maxLength="15" required onChange={this.changeTitle}/>
+    
+                            <label htmlFor="nameInput" className="sr-only">your name here</label>
+                            <input id="nameInput" type="text" placeholder="your name here" maxLength="18" required onChange={this.changeName}/>
+                        </div>
+                        <button className="publish" onClick={this.publishArt} >publish</button>
+                    </form>
+                </div> {/* wrapper */}
 
-                </form>
-                {/* add title and name inputs */}
-                <button className="publish" onClick={this.publishArt} >publish</button>
             </section> // /* section1 */ 
         );
     }
