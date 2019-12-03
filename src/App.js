@@ -6,6 +6,9 @@ import './App.css';
 
 // the main class of the Public Pixel Gallery App
 class PPGApp extends Component {
+  
+  // state holds data pulled from firebase;
+  // an array of pixel art objects
   constructor() {
     super();
     this.state = {
@@ -13,12 +16,14 @@ class PPGApp extends Component {
     }
   }
 
+  // when make art button is clicked, creation section is displayed
   displaySection1 = (event) => {
     const element = document.getElementById("section1");
     element.style.left = "0";
     document.getElementsByTagName('html')[0].style.overflow = "hidden";
   }
 
+  // data is pulled from firebase and passed to state
   componentDidMount() {
     const dbRef = firebase.database().ref();
     dbRef.on('value', (data) => {
@@ -31,28 +36,31 @@ class PPGApp extends Component {
       this.setState({
         pixelArtArray: artArray,
       });
-      console.log("state: ", this.state);
     });
   }
 
   render() {
     return (
       <div className="App">
+
         <header>
           <h1>public pixel gallery</h1>
-          <button className="make-pixel-art" onClick={this.displaySection1}>make pixel art</button>
+          <button className="makePixelArt" onClick={this.displaySection1}>make pixel art</button>
         </header>
+
         <main>
+          {/* this is the pixel art creation section */}
           <Section1 />
 
-          <section className="section-2">
+          {/* this is where all created pixel art (firebase data) is displayed */}
+          <section className="section2">
             <ul className="wrapper gallery">
               {
                 this.state.pixelArtArray.map( (artItem) => {
                   return(
                     <li>
                       <h2>{artItem.name}</h2>
-                      <div className="art-container">
+                      <div className="artContainer">
                         {
                           artItem.colourArray.map((colour) => {
                             return (
@@ -69,9 +77,11 @@ class PPGApp extends Component {
             </ul> {/* /.wrapper */}
           </section>
         </main>
+
         <footer>
           <h4>copyright lewis brignell 2019</h4>
         </footer>
+
       </div>
     );
   } // render

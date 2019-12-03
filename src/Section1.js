@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import firebase from './firebase.js';
 
 class Section1 extends Component {
+
+    // default button ids and default white colour is assigned 
+    //  to all generated pixel buttons.
+    // state contains the following:
+    //   - an array (length 144) of button id numbers, 0-143
+    //   - an array (length 144) of respective button colours
+    //      which are initialized to #fff at start.
+    //   - a default selected radio colour, #fff.
+    //   - art piece title and authour set to "".
     constructor() {
         super();
 
@@ -17,6 +26,7 @@ class Section1 extends Component {
         }
     }
 
+    // hides pixel art creation section, re-revealing the gallery
     hideSection1 = (event) => {
         event.preventDefault();
         const element = document.getElementById("section1");
@@ -24,6 +34,7 @@ class Section1 extends Component {
         document.getElementsByTagName('html')[0].style.overflow = "scroll";
     }
 
+    // at start, 144 pixel buttons are generated and assigned to a square grid
     generateButtons = () => {
         const max = 144;
         const tempArray = [];
@@ -33,6 +44,8 @@ class Section1 extends Component {
         return(tempArray);
     }
 
+    // at start, 144 default colours of #fff are assigned to each button and the 
+    //  array that tracks changes
     generateDefaultColours = () => {
         const max = 144;
         const tempArray = [];
@@ -43,6 +56,10 @@ class Section1 extends Component {
         return (tempArray);
     }
 
+    // when clicked, the target button is assigned the colour value corresponding 
+    //  to the currently selected radio button value.
+    // this value is passed on to the array in state that will eventually be pushed
+    //  to firebase.
     changeButtonValue = (event) => {
         event.preventDefault();
         let position = event.target.id;
@@ -54,6 +71,7 @@ class Section1 extends Component {
         
     }
 
+    // the currently selected radio colour is updated in state.
     changeSelectedColour = (event) => {
         this.setState({
             selectedColour: event.target.value,
@@ -61,18 +79,23 @@ class Section1 extends Component {
         // event.target.previousSibling.style.border = "3px solid gold";
     }
 
+    // tracks changes to the title text input, state is updated accordingly
     changeTitle = (event) => {
         this.setState({
             title: event.target.value,
         });
     }
 
+    // tracks changes to the authour name text input, state is updated accordingly
     changeName = (event) => {
         this.setState({
             authour: event.target.value,
         });
     }
 
+    // if the title and name aren't "", all state info is made into an art object
+    //  and pushed to firebase, on render this new information will be displayed 
+    //  on the main gallery page.
     publishArt = (event) => {
         event.preventDefault();
 
@@ -102,7 +125,6 @@ class Section1 extends Component {
     }
 
     render() {
-        console.log('state: ', this.state);
         return(
             <section id="section1" className="section1">
                 <div className="wrapper">
@@ -110,8 +132,9 @@ class Section1 extends Component {
                         <h2>make art!</h2>
                         <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
                     </div>
+
                     <form action="submit">
-                        <fieldset id="artMaker" className="artMaker art-container">
+                        <fieldset id="artMaker" className="artMaker artContainer">
                             <legend className="sr-only">here you can colour the pixels</legend>
                             {
                                 this.state.buttonPixels.map( (thing) => {
@@ -121,6 +144,7 @@ class Section1 extends Component {
                                 })
                             }
                         </fieldset>
+
                         <fieldset className="radioContainer">
                             <legend className="sr-only">select a colour</legend>
                             
@@ -174,6 +198,7 @@ class Section1 extends Component {
                             </p></label>
                             <input type="radio" id="purple" name="palette" value="#800080" className="sr-only" onClick={this.changeSelectedColour} />
                         </fieldset>
+
                         <div className="inputContainer">
                             <label htmlFor="titleInput" className="sr-only">art title here</label>
                             <input id="titleInput" type="text" placeholder="art title here" maxLength="15" required onChange={this.changeTitle}/>
@@ -181,6 +206,7 @@ class Section1 extends Component {
                             <label htmlFor="nameInput" className="sr-only">your name here</label>
                             <input id="nameInput" type="text" placeholder="your name here" maxLength="18" required onChange={this.changeName}/>
                         </div>
+                        
                         <button className="publish" onClick={this.publishArt} >publish</button>
                     </form>
                 </div> {/* wrapper */}
