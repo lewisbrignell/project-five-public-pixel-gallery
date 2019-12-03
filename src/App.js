@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase.js';
-import Section1 from './Section1.js'
+import Section1 from './Section1.js';
 import './App.css';
 
 
@@ -42,7 +42,6 @@ class PPGApp extends Component {
   render() {
     return (
       <div className="App">
-
         <header>
           <h1>public pixel gallery</h1>
           <button className="makePixelArt" onClick={this.displaySection1}>make pixel art</button>
