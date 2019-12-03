@@ -81,6 +81,10 @@ li {
   border: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 h1,
 h2,
 h3,
@@ -110,6 +114,32 @@ li,
 h4,
 .cancelPixelArt {
    background: var(--light-main);
+}
+
+body {
+  -webkit-animation: backgroundAnimation 11s ease infinite;
+  -moz-animation: backgroundAnimation 11s ease infinite;
+  animation: backgroundAnimation 11s ease infinite;
+
+  background: linear-gradient(182deg, var(--dark-main), #6b6ba8);
+  background-size: 400% 400%;
+}
+
+
+@-webkit-keyframes backgroundAnimation {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@-moz-keyframes backgroundAnimation {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@keyframes backgroundAnimation {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
 }
 
 
