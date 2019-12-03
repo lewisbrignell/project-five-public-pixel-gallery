@@ -67,11 +67,6 @@ body {
   margin: 0 auto;
 }
 
-.flexParent {
-  display: flex;
-  justify-content: space-between;
-}
-
 h1,
 h2,
 h3,
@@ -184,8 +179,8 @@ h1 {
 }
 
 .publish:active {
-  bottom: 15px;
-  right: 7px;
+  color: var(--light-main);
+  font-size: 2.6rem;
 }
 
 .make-pixel-art:hover,
@@ -285,12 +280,21 @@ main {
   transition: all 0.3s ease-in;
 }
 
+  .flexParent {
+    display: flex;
+    justify-content: center;
+  }
+
 form {
   width: 100%;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.section1 h2 {
+  margin-right: 80px;
 }
 
 .cancelPixelArt {
@@ -340,6 +344,17 @@ fieldset {
   margin: 5px 10px;
   border: 3px solid inherit;
   background: inherit;
+
+  transition: all 0.05s ease-out;
+}
+
+.radioLabel:hover,
+.radioLabel:focus {
+  border: 3px solid goldenrod;
+}
+
+.radioLabel:active {
+  border: 3px solid darkcyan;
 }
 
 .inputContainer {
@@ -395,9 +410,17 @@ h4 {
     flex-wrap: wrap;
   }
 
+  .section1 h2 {
+    margin-right: 180px;
+  }
+
+  .flexParent {
+    justify-content: center;
+  }
+
   .artMaker {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
   }
 
   .radioContainer {
@@ -407,6 +430,10 @@ h4 {
   .wrapper {
     max-width: 1480px;
     width: 90%;
+  }
+
+  .section1 .wrapper {
+    width: 70%;
   }
 
   .headerWrapper {

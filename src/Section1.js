@@ -106,7 +106,7 @@ class Section1 extends Component {
         return(
             <section id="section1" className="section1">
                 <div className="wrapper">
-                    <div className="flexparent">
+                    <div className="flexParent">
                         <h2>make art!</h2>
                         <button className="cancelPixelArt" onClick={this.hideSection1}><i className="fas fa-window-close"></i></button>
                     </div>
