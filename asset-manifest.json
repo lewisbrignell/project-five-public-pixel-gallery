@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/lewisbrignell/projectFivePublicPixelGallery/static/css/main.e85facd3.chunk.css",
-    "main.js": "/lewisbrignell/projectFivePublicPixelGallery/static/js/main.1bbc1a65.chunk.js",
-    "main.js.map": "/lewisbrignell/projectFivePublicPixelGallery/static/js/main.1bbc1a65.chunk.js.map",
-    "runtime-main.js": "/lewisbrignell/projectFivePublicPixelGallery/static/js/runtime-main.df8d217d.js",
-    "runtime-main.js.map": "/lewisbrignell/projectFivePublicPixelGallery/static/js/runtime-main.df8d217d.js.map",
-    "static/js/2.2bb6af16.chunk.js": "/lewisbrignell/projectFivePublicPixelGallery/static/js/2.2bb6af16.chunk.js",
-    "static/js/2.2bb6af16.chunk.js.map": "/lewisbrignell/projectFivePublicPixelGallery/static/js/2.2bb6af16.chunk.js.map",
-    "index.html": "/lewisbrignell/projectFivePublicPixelGallery/index.html",
-    "precache-manifest.a03cef6182682f46e2383a7e000a80e8.js": "/lewisbrignell/projectFivePublicPixelGallery/precache-manifest.a03cef6182682f46e2383a7e000a80e8.js",
-    "service-worker.js": "/lewisbrignell/projectFivePublicPixelGallery/service-worker.js",
-    "static/css/main.e85facd3.chunk.css.map": "/lewisbrignell/projectFivePublicPixelGallery/static/css/main.e85facd3.chunk.css.map"
+    "main.css": "/projectFivePublicPixelGallery/static/css/main.e85facd3.chunk.css",
+    "main.js": "/projectFivePublicPixelGallery/static/js/main.a47d264c.chunk.js",
+    "main.js.map": "/projectFivePublicPixelGallery/static/js/main.a47d264c.chunk.js.map",
+    "runtime-main.js": "/projectFivePublicPixelGallery/static/js/runtime-main.747f20db.js",
+    "runtime-main.js.map": "/projectFivePublicPixelGallery/static/js/runtime-main.747f20db.js.map",
+    "static/js/2.7519f67c.chunk.js": "/projectFivePublicPixelGallery/static/js/2.7519f67c.chunk.js",
+    "static/js/2.7519f67c.chunk.js.map": "/projectFivePublicPixelGallery/static/js/2.7519f67c.chunk.js.map",
+    "index.html": "/projectFivePublicPixelGallery/index.html",
+    "precache-manifest.0331ae5f6a26bb7bc24b59b5f31160b1.js": "/projectFivePublicPixelGallery/precache-manifest.0331ae5f6a26bb7bc24b59b5f31160b1.js",
+    "service-worker.js": "/projectFivePublicPixelGallery/service-worker.js",
+    "static/css/main.e85facd3.chunk.css.map": "/projectFivePublicPixelGallery/static/css/main.e85facd3.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.df8d217d.js",
-    "static/js/2.2bb6af16.chunk.js",
+    "static/js/runtime-main.747f20db.js",
+    "static/js/2.7519f67c.chunk.js",
     "static/css/main.e85facd3.chunk.css",
-    "static/js/main.1bbc1a65.chunk.js"
+    "static/js/main.a47d264c.chunk.js"
   ]
 }
