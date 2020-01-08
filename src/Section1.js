@@ -134,7 +134,7 @@ class Section1 extends Component {
                     </div>
 
                     <form action="submit">
-                        <fieldset id="artMaker" className="artMaker artContainer">
+                        <div id="artMaker" className="artMaker artContainer">
                             <legend className="sr-only">here you can colour the pixels</legend>
                             {
                                 this.state.buttonPixels.map( (thing) => {
@@ -143,9 +143,9 @@ class Section1 extends Component {
                                     );
                                 })
                             }
-                        </fieldset>
+                        </div>
 
-                        <fieldset className="radioContainer">
+                        <div className="radioContainer">
                             <legend className="sr-only">select a colour</legend>
                             
                             <label style={{background: '#fff'}} className="radioLabel" htmlFor="white"><p className="sr-only">
@@ -197,7 +197,7 @@ class Section1 extends Component {
                                 purple
                             </p></label>
                             <input type="radio" id="purple" name="palette" value="#800080" className="sr-only" onClick={this.changeSelectedColour} />
-                        </fieldset>
+                        </div>
 
                         <div className="inputContainer">
                             <label htmlFor="titleInput" className="sr-only">art title here</label>

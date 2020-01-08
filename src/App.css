@@ -72,7 +72,7 @@ h2,
 h3,
 h4,
 p,
-fieldset,
+.radioContainer,
 button,
 ul,
 li {
@@ -297,13 +297,14 @@ main {
 
 /* pixel art maker styles  */
 .section1 {
-  height: 100vh;
   width: 100vw;
 
   position: fixed;
   top: 0;
   left: -100vw;
   z-index: 3;
+
+  overflow: scroll;
 
   background: var(--light-main);
 
@@ -317,6 +318,11 @@ main {
 
 form {
   width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  border: 2px solid var(--dark-main);
+  border-radius: 5px;
 
   display: flex;
   flex-wrap: wrap;
@@ -353,7 +359,7 @@ form {
   border: 0.3px dotted var(--dark-main);
 }
 
-fieldset {
+.radioContainer {
   display: flex;
   justify-content: space-around;
 }
@@ -468,4 +474,8 @@ h4 {
     width: 90%;
   }
 } /* @media (min-width: 800px) */
+
+@media (max-height: 760px) {
+  
+}
 
