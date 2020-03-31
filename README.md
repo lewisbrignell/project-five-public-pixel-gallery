@@ -1,5 +1,9 @@
 # The Public Pixel Gallery
 
+#### [Public Pixel Gallery on GitHub pages] (https://lewisbrignell.github.io/projectFivePublicPixelGallery/)
+
+![screenshot of this project](screen-shot.png)
+
 ## What's it made with?
 
 This project is built in React, styled using CSS3. Data is stored in and called from Firebase.
